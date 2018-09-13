@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Order Guide Interpreter Definition" max_length="40" name="x_17973_simple_og_interpreter_config" type="collection">
+        <element label="Name" max_length="50" name="name" type="string"/>
+        <element default="javascript:getNextObjNumberPadded();" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" max_length="40" name="number" read_only="true" type="string" use_dynamic_default="true"/>
+        <element label="Order Guide" max_length="32" name="order_guide" reference="sc_cat_item_guide" type="reference"/>
+        <element default="true" label="Active" max_length="40" name="u_boolean_1" type="boolean"/>
+        <index name="index">
+            <element name="order_guide"/>
+        </index>
+    </element>
+</database>

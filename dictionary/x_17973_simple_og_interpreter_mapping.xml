@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Interpreter Variable Mapping" max_length="40" name="x_17973_simple_og_interpreter_mapping" type="collection">
+        <element display="true" label="JSON Object Name" mandatory="true" max_length="40" name="json_object_name" type="string"/>
+        <element label="Mapped to Variable" mandatory="true" max_length="32" name="mapped_to_variable" reference="item_option_new" reference_qual="javascript:if (current.variable_set!=''){'variable_set='+current.variable_set;} else {'cat_item='+current.parent_interpreter.order_guide;}" type="reference" use_reference_qualifier="advanced"/>
+        <element label="Parent Interpreter" max_length="32" name="parent_interpreter" reference="x_17973_simple_og_interpreter_config" type="reference"/>
+        <element label="Variable Set" max_length="32" name="variable_set" reference="item_option_new_set" reference_qual="javascript:var qual = new x_17973_simple_og.OGIRefQualifierUtils();qual.getOGVariableSets(current.parent_interpreter.order_guide); " type="reference" use_reference_qualifier="advanced"/>
+        <index name="index">
+            <element name="parent_interpreter"/>
+            <element name="json_object_name"/>
+        </index>
+        <index name="index2">
+            <element name="variable_set"/>
+        </index>
+        <index name="index3">
+            <element name="mapped_to_variable"/>
+        </index>
+    </element>
+</database>
